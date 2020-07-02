@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Hello World | Cyndrian的手札
+      Collections集合中的通用算法 | Cyndrian的手札
     
   </title>
   <meta name="author" content="Cyndrian">
@@ -100,7 +100,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「Hello World」
+			「Collections集合中的通用算法」
 		
 	</p>
 
@@ -124,17 +124,22 @@
 		<ul id="global-nav">
 	
 		<li class="menu-home">
-			<a href="/" class="menu-item-home" target="_blank">主页</a>
+			<a href="/" class="menu-item-home" target="_self">主页</a>
 		</li>
 		
 	
 		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+			<a href="/archives" class="menu-item-archive" target="_self">归档</a>
 		</li>
 		
 	
 		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+			<a href="/categories" class="menu-item-categories" target="_self">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_self">标签</a>
 		</li>
 		
 	
@@ -185,8 +190,8 @@
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/07/01/hello-world/" itemprop="url">
-		Hello World
+	<a href="/2020/07/02/Collections%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%97%E6%B3%95/" itemprop="url">
+		Collections集合中的通用算法
 	</a>
 
 		</div>
@@ -202,9 +207,9 @@
 
 	更新于
 
-	<a href="/2020/07/01/hello-world/" itemprop="url">
-		<time datetime="2020-07-01T04:33:58.931Z" itemprop="dateUpdated">
-	  		2020-07-01
+	<a href="/2020/07/02/Collections%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E9%80%9A%E7%94%A8%E7%AE%97%E6%B3%95/" itemprop="url">
+		<time datetime="2020-07-02T07:09:34.000Z" itemprop="dateUpdated">
+	  		2020-07-02
 	  </time>
 	</a> 
 
@@ -212,7 +217,14 @@
 
 			</span>
 			<span>
-						
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Collections/" class=" ">
+			Collections
+		</a>
+	
+		
 			</span>
 			
 			
@@ -222,19 +234,157 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+			<h3 id="排序、洗牌"><a href="#排序、洗牌" class="headerlink" title="排序、洗牌"></a>排序、洗牌</h3><p>用法如下，对staff进行排序再逆序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> staff = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">...</span><br><span class="line">staff.sort(Comparator.comparing(String::toString).reversed());</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h5 id="java-util-Collections"><a href="#java-util-Collections" class="headerlink" title="java.util.Collections"></a>java.util.Collections</h5><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">static void shuffle(List&lt;?&gt; elements)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">static void shuffle(List&lt;?&gt; elements, Random r)</td>
+<td align="left">对列表随机洗牌，时间复杂度为O(n a(n)), a是获取元素的平均时间</td>
+</tr>
+<tr>
+<td align="left">static &lt;T extends Comparable&lt;? Super T&gt;&gt; void sort(List<T> elements)</td>
+<td align="left">使用稳定的排序算法对列表进行排序，时间复杂度为O(n logn)</td>
+</tr>
+</tbody></table>
+<h5 id="java-util-List"><a href="#java-util-List" class="headerlink" title="java.util.List"></a>java.util.List</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>:-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Default void sort(COmparator&lt;? Super T&gt; comparator)</td>
+<td>使用给定的comparator进行排序</td>
+</tr>
+</tbody></table>
+<h5 id="java-util-Comparator"><a href="#java-util-Comparator" class="headerlink" title="java.util.Comparator"></a>java.util.Comparator</h5><table>
+<thead>
+<tr>
+<th>:-</th>
+<th>:-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static &lt;T extends Comparable&lt;? Super T&gt;&gt; Comparator<T> reverseOrder()</td>
+<td>返回一个逆序排序比较器</td>
+</tr>
+<tr>
+<td>static &lt;T extends Comparable&lt;? Super T&gt;&gt; Comparator<T> reverseOrder()</td>
+<td>返回一个逆序的比较器</td>
+</tr>
+</tbody></table>
+<h3 id="二叉查找"><a href="#二叉查找" class="headerlink" title="二叉查找"></a>二叉查找</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>:-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static &lt;T extends Comparable&lt;? super T&gt;&gt; int binarySearch(List<T> elements, T key)</td>
+<td></td>
+</tr>
+<tr>
+<td>static <T> int binarySearch(List<T> elements, T key, Comparator&lt;? super T&gt; c)</td>
+<td>在有序的列表里找到目标值，时间复杂度为O(a(n) log n), a(n)为获取到元素的平均时间</td>
+</tr>
+</tbody></table>
+<h3 id="简单算法"><a href="#简单算法" class="headerlink" title="简单算法"></a>简单算法</h3><h5 id="java-util-Collections-1"><a href="#java-util-Collections-1" class="headerlink" title="java.util.Collections"></a>java.util.Collections</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static &lt;T extends Comparable&lt;? super T&gt;&gt; T     min(Collection<T> elements)</td>
+<td></td>
+</tr>
+<tr>
+<td>static &lt;T extends Comparable&lt;? super T&gt;&gt; T     max(Collection<T> elements)</td>
+<td>返回一个最值比较器</td>
+</tr>
+<tr>
+<td>static <T> min(Collection<T> elements, Comparator&lt;? super T&gt; c)</td>
+<td></td>
+</tr>
+<tr>
+<td>static <T> max(Collection<T> elements, Comparator&lt;? super T&gt; c)</td>
+<td>返回列表中的最值</td>
+</tr>
+<tr>
+<td>static <T> void copy(List&lt;? super T&gt; to, List<T> from)</td>
+<td>从源列表中拷贝到目标列表，目标列表长度需要和源列表一样长</td>
+</tr>
+<tr>
+<td>static <T> void fill(List&lt;? super T&gt; l, T value)</td>
+<td>使用目标值填充列表</td>
+</tr>
+<tr>
+<td>static <T> boolean addAll(Collection&lt;? super T&gt; c, T… values)</td>
+<td>将目标值们追加到列表末尾</td>
+</tr>
+<tr>
+<td>static <T> boolean replaceAll(List<T> l, T oldValue, T newValue)</td>
+<td>将列表中的所有目标值替换为新的值</td>
+</tr>
+<tr>
+<td>static int indexOfSubList(List<?> l, List<?> s)</td>
+<td></td>
+</tr>
+<tr>
+<td>static int lastIndexOfSubList(List<?> l, List<?> s)</td>
+<td>在列表中寻找到和给定列表相同的子列表的索引值</td>
+</tr>
+<tr>
+<td>static void swap(List&lt;?&gt; l, int i, int j)</td>
+<td></td>
+</tr>
+<tr>
+<td>static void reverse(List&lt;?&gt; l)</td>
+<td></td>
+</tr>
+<tr>
+<td>static void rotate(List&lt;?&gt; l, int d)</td>
+<td>通过给定索引值i来旋转列表, (i + d) % l.size()</td>
+</tr>
+<tr>
+<td>static int frequency(Collection&lt;?&gt; c, Object o)</td>
+<td>统计目标值得数量</td>
+</tr>
+<tr>
+<td>boolean disjoint(Collection<?> c1, Collection<?> c2)</td>
+<td>在两列表无共同值得情况下返回true</td>
+</tr>
+</tbody></table>
+<h5 id="java-util-Collection"><a href="#java-util-Collection" class="headerlink" title="java.util.Collection"></a>java.util.Collection</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default boolean removeIf(Predicate&lt;? super E&gt; filter)</td>
+<td>移除所有匹配到的元素</td>
+</tr>
+</tbody></table>
+<h3 id="集合与数组相互转换"><a href="#集合与数组相互转换" class="headerlink" title="集合与数组相互转换"></a>集合与数组相互转换</h3><h6 id="数组到集合"><a href="#数组到集合" class="headerlink" title="数组到集合"></a>数组到集合</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String[] values = ...;</span><br><span class="line"><span class="keyword">var</span> staff = <span class="keyword">new</span> HashSet&lt;&gt;(List.of(values));</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h6 id="集合到数组"><a href="#集合到数组" class="headerlink" title="集合到数组"></a>集合到数组</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object[] values = staff.toArray();</span><br><span class="line"><span class="comment">// 转化到对应的类型</span></span><br><span class="line">String[] values = staff.toArray(<span class="keyword">new</span> String[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">// 也可指定长度</span></span><br><span class="line">staff.toArray(<span class="keyword">new</span> String[staff.size()]); <span class="comment">// 效果同上</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 	
 		</div>
 		
@@ -253,6 +403,14 @@
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
+			<a href="/2020/07/02/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="Lambda表达式" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2020/07/01/Collections%E9%9B%86%E5%90%88/" title="Collections集合" rel="next">
+				下一篇&raquo;
+			</a>
 			
 	</span>
 
@@ -267,9 +425,72 @@
 
 <div class="relate-post">
 	
-		<div class="config-info">
-			Please check the parameter of <b>post_relate</b> in config.yml of hexo-theme-Annie! You should make sure that <b>postsEnable is true</b> and the number of site posts greater than 1.
-		</div>	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/07/01/Collections%E9%9B%86%E5%90%88/" title="Collections集合">
+								Collections集合			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 1日, 2020				
+							</p>
+							<p class="relate-post-content">
+								Collections框架中的接口
+Collections框架中的类
+
+
+
+集合类型
+描述
+
+
+
+ArrayList
+动态增长与收缩的顺序序列
+
+
+LinkedList
+在任意位置高效的插入与删除的顺序序列
+
+
+ArrayDeque
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/07/01/Collections%E9%9B%86%E5%90%88/" title="Collections集合">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Collections集合"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/07/02/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="Lambda表达式">
+								Lambda表达式			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 2日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/07/02/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="Lambda表达式">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Lambda表达式"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
 	
 </div>	
 				</div>
@@ -446,17 +667,22 @@
 		<ul id="global-nav">
 	
 		<li class="menu-home">
-			<a href="/" class="menu-item-home" target="_blank">主页</a>
+			<a href="/" class="menu-item-home" target="_self">主页</a>
 		</li>
 		
 	
 		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+			<a href="/archives" class="menu-item-archive" target="_self">归档</a>
 		</li>
 		
 	
 		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+			<a href="/categories" class="menu-item-categories" target="_self">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_self">标签</a>
 		</li>
 		
 	
